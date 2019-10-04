@@ -1,5 +1,8 @@
 <div class="container-fluid">
     <div class="row">
-    <div [style.border-top]='setBorderTop(dimension)' *ngFor="let dimension of DIMENSIONS"[ngStyle]="{'border-right':dimension%3 === 0 ? 'none' : '' }" class="single-box col-xl-4 col-lg-4 col-md-4 col-4 text-center"></div>
+    <div (click)="markLocation(dimension)" [style.border-top]='setBorderTop(dimension)' *ngFor="let dimension of DIMENSIONS"[ngStyle]="{'border-right':dimension%3 === 0 ? 'none' : '' }" class="single-box col-xl-4 col-lg-4 col-md-4 col-4 text-center">
+        <div class="player-icon blue-color">X</div>
+        <div class="player-icon red-color">O</div>
+    </div>
 </div>
 </div>
