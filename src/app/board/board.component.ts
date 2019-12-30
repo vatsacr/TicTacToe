@@ -93,6 +93,8 @@ export class BoardComponent implements OnInit {
   resetGame(){
     this.players[0].BoxesOwned = [];
     this.players[1].BoxesOwned = [];
+    this.player1.BoxesOwned = [];
+    this.player2.BoxesOwned = [];
   }
 
 

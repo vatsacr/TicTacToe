@@ -1,0 +1,31 @@
+.app-button{
+    padding: 2em 1em;
+    border-radius: 2px;
+}
+
+.app-button-primary{
+    border-color: #ee4f00;
+    background-color: #ee4f00;
+    color: #ffffff;
+    margin-left: 1em;
+}
+
+.app-button a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.app-footer{
+    position: absolute;
+    left: 0;
+    width: 100%;
+    text-align: right;
+    bottom: 0;
+    padding: 0.5em;
+    background: #000000;
+}
+
+.app-footer-text{
+    padding: 0 1em;
+    color: #ee4f00;
+}
