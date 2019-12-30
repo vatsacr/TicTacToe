@@ -3,4 +3,5 @@ export class Player {
     BoxesOwned: Array<number>;
     Turn: boolean = false;
     Winner: boolean;
+    Name: string;
 }
