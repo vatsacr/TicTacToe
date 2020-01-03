@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { BoardComponent } from './board/board.component';
 import { MainMenuComponent } from './main-menu/main-menu.component';
 import {ScoreboardComponent} from './scoreboard/scoreboard.component';
+import { SocialMediaComponent } from './social-media/social-media.component';
 
 const appRoutes: Routes = [
   { path: 'new-game', component: BoardComponent },
@@ -18,7 +19,8 @@ const appRoutes: Routes = [
     AppComponent,
     BoardComponent,
     MainMenuComponent,
-    ScoreboardComponent
+    ScoreboardComponent,
+    SocialMediaComponent
   ],
   imports: [
     BrowserModule,

@@ -18,7 +18,6 @@ export class BoardComponent implements OnInit {
     this.players.push(this.player1);
     this.players.push(this.player2);
     this.DIMENSIONS = [0,1,2,3,4,5,6,7,8];
-    //this.player1.Turn = true;
     this.players.find(player => player.Type === 'O').Turn = true;
   }
 
@@ -95,6 +94,9 @@ export class BoardComponent implements OnInit {
     this.players[1].BoxesOwned = [];
     this.player1.BoxesOwned = [];
     this.player2.BoxesOwned = [];
+    this.player1.Turn = true;
+    this.player2.Turn = false;
+    this.mainTable = ['a','b','c','d','e','f','g','h','i'];
   }
 
 
