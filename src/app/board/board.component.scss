@@ -20,3 +20,44 @@
 .red-color{
     color: #ff5030;
 }
+
+.custom-fade{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #000000;
+    opacity: 0.7;
+}
+
+.custom-modal-content{
+    width: 50%;
+    position: absolute;
+    z-index: 150;
+    background: #ffffff;
+    left: 25%;
+    right: 25%;
+    top: 25%;
+}
+.custom-modal-body, .custom-modal-header{
+    border-bottom: 1px solid #b1b1b1;
+    padding: 0.5rem 1rem;
+}
+.custom-modal-footer{
+    padding: 0.5rem 1rem;
+    text-align: right;
+}
+
+.custom-modal-action-button{
+margin-left: 0.5rem;
+padding: 0.5rem 1rem;
+}
+
+button {
+    border-radius: 5px;
+}
+
+button:disabled {
+    opacity: 0.5;
+}

@@ -8,11 +8,13 @@ import {Player} from '../player';
 })
 export class BoardComponent implements OnInit {
   DIMENSIONS:Array<number> = [];
-  mainTable = ['a','b','c','d','e','f','g','h','i'];
+  mainTable:Array<string> = ['a','b','c','d','e','f','g','h','i'];
   players:Array<Player> = [];
   player1:Player = {'BoxesOwned':[],'Turn':false,Type:'O','Winner':false, Name:'player1'};
   player2:Player = {'BoxesOwned':[],'Turn':false,Type:'X','Winner':false, Name:'player2'};
-  winningSequence = [[1,2,3],[4,5,6],[7,8,9],[1,5,9],[3,5,7],[1,4,7],[2,5,8],[3,6,9]];
+  winningSequence:Array<Array<number>> = [[1,2,3],[4,5,6],[7,8,9],[1,5,9],[3,5,7],[1,4,7],[2,5,8],[3,6,9]];
+  open = {'playerNameModifier':true, 'winnerAnnouncer':false};
+  winner:string = '';
   constructor() { }
   ngOnInit() {
     this.players.push(this.player1);
@@ -22,7 +24,7 @@ export class BoardComponent implements OnInit {
   }
 
   setBorderTop(dimension:number){
-    return dimension === 0 || dimension === 1 || dimension === 2?'none':''
+    return dimension === 0 || dimension === 1 || dimension === 2?'none':'';
   }
 
   markLocation(dimension:number){
@@ -72,24 +74,22 @@ export class BoardComponent implements OnInit {
   isWinner(player:Player){
     // Get the value of all the horizontals
     if(this.mainTable[0] === this.mainTable[1] && this.mainTable[1] == this.mainTable[2] || this.mainTable[3] === this.mainTable[4] && this.mainTable[4] === this.mainTable[5] || this.mainTable[6] === this.mainTable[7] && this.mainTable[7] === this.mainTable[8]){
-      console.log(player.Name + 'is the winner');
-      this.resetGame();
+      this.winnerAnnouncerFunction(player);
     }
 
     // Get the value of all the verticals
     if(this.mainTable[0] === this.mainTable[3] && this.mainTable[3] == this.mainTable[6] || this.mainTable[1] === this.mainTable[4] && this.mainTable[4] === this.mainTable[7] || this.mainTable[2] === this.mainTable[5] && this.mainTable[5] === this.mainTable[8]){
-      console.log(player.Name + 'is the winner');
-      this.resetGame();
+      this.winnerAnnouncerFunction(player);
     }
 
     // Get the value of all the diagonals
     if(this.mainTable[0] === this.mainTable[4] && this.mainTable[4] == this.mainTable[8] || this.mainTable[2] === this.mainTable[4] && this.mainTable[4] === this.mainTable[6]){
-      console.log(player.Name + 'is the winner');
-      this.resetGame();
+      this.winnerAnnouncerFunction(player);
     }
   }
 
-  resetGame(){
+  startNewGame(){
+    this.open.winnerAnnouncer = false;
     this.players[0].BoxesOwned = [];
     this.players[1].BoxesOwned = [];
     this.player1.BoxesOwned = [];
@@ -97,6 +97,15 @@ export class BoardComponent implements OnInit {
     this.player1.Turn = true;
     this.player2.Turn = false;
     this.mainTable = ['a','b','c','d','e','f','g','h','i'];
+  }
+
+  isBothModalsClosed(){
+    return this.open.playerNameModifier || this.open.winnerAnnouncer;
+  }
+
+  winnerAnnouncerFunction(player:Player) {
+    this.winner = player.Name;
+    this.open.winnerAnnouncer = true;
   }
 
 
