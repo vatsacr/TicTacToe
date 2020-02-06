@@ -1,8 +1,9 @@
 # TicTacToe
 
-Run `npm i` to install all the dependencies
-Run `ng serve` to run the application
-Will be running in `http://localhost:4200/`
+Run `npm i` to install all the dependencies <br/>
+Run `ng serve` to run the application <br/>
+Will be running in `http://localhost:4200/` <br/>
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.8.
 
 ## Development server
